@@ -37,12 +37,11 @@ metadata:
 spec:
   selector:
     app: book-catalog-service
-  type: NodePort
+  type: LoadBalancer
   ports:
     - protocol: TCP
       port: 8000
       targetPort: 8000
-      nodePort: 30000
 ---
 # Deployment for Inventory Management Service
 apiVersion: apps/v1
@@ -78,9 +77,8 @@ metadata:
 spec:
   selector:
     app: inventory-management-service
-  type: NodePort
+  type: LoadBalancer
   ports:
     - protocol: TCP
       port: 8001
       targetPort: 8001
-      nodePort: 30001
